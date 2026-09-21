@@ -1,0 +1,60 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: astana_opera_housing
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d astana_opera_housing"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/astana_opera_housing
+      SYNC_DATABASE_URL: postgresql://postgres:postgres@db:5432/astana_opera_housing
+      UPLOAD_DIR: /app/uploads
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173
+      ADMIN_GATE_PASSWORD: admin123
+      AUTH_SECRET_KEY: dev-secret-change-me
+    volumes:
+      - uploads_data:/app/uploads
+      - ./data:/app/data
+      - ./scripts:/app/scripts
+      - ./app:/app/app
+      - ./alembic:/app/alembic
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head && python -m scripts.verify_schema && python -m scripts.seed_from_excel --reset && python -m scripts.ensure_housing_complexes && python -m scripts.ensure_admin && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000/api
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - backend
+    command: >
+      sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+
+volumes:
+  pgdata:
+  uploads_data:
+  frontend_node_modules:

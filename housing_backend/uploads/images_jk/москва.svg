@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#123b2f" />
+      <stop offset="100%" stop-color="#2f7f64" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f9d478" />
+      <stop offset="100%" stop-color="#f8b900" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="28" fill="url(#bg)" />
+  <rect x="42" y="42" width="716" height="436" rx="24" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" />
+  <circle cx="620" cy="176" r="112" fill="rgba(255,255,255,0.12)" />
+  <path d="M180 360c56-92 118-130 188-132 72-2 130 44 184 132" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" />
+  <path d="M214 332c37-53 82-82 124-84 48-2 92 24 124 84" fill="none" stroke="#fef3c7" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+  <rect x="96" y="120" width="240" height="96" rx="18" fill="rgba(255,255,255,0.18)" />
+  <text x="116" y="170" fill="#fefce8" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Москва</text>
+  <text x="116" y="204" fill="#d8f3e5" font-family="Segoe UI, Arial, sans-serif" font-size="18">Жилой комплекс</text>
+</svg>

@@ -1,0 +1,426 @@
+.admin-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 16px;
+  z-index: 2000;
+}
+
+.admin-modal {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.admin-modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #FAF9F6 0%, #eff5f2 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-modal-title {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.admin-modal-sub {
+  margin: 0;
+  font-size: 13px;
+}
+
+.admin-modal-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #334155;
+  padding: 2px 8px;
+}
+
+.admin-modal-form {
+  padding: 18px 20px 20px;
+}
+
+.admin-modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.admin-modal-input {
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.admin-modal-input:focus {
+  border-color: #2D463E;
+  box-shadow: 0 0 0 4px rgba(45, 70, 62, 0.15);
+}
+
+.admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.admin-modal-primary {
+  background: linear-gradient(135deg, #3E5B51, #2D463E);
+  border: none;
+  box-shadow: 0 6px 18px rgba(45, 70, 62, 0.2);
+}
+
+.housing-app-modal {
+  max-width: 720px;
+}
+
+.housing-app-form {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+
+.housing-app-info-banner {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #eff5f2;
+  border: 1px solid #dce6e2;
+  color: #2D463E;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.housing-app-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.housing-app-template-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.housing-app-template-btn {
+  margin-left: auto;
+  background: #16a34a;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.housing-app-file-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.housing-app-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.housing-app-file-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px dashed #94a3b8;
+  border-radius: 10px;
+  background: #f8fafc;
+  position: relative;
+  cursor: pointer;
+}
+
+.housing-app-file-input-wrap input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.housing-app-file-name {
+  font-size: 13px;
+  color: #475569;
+}
+
+.housing-app-success {
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.housing-app-success-title {
+  font-weight: 800;
+  color: #15803d;
+}
+
+.housing-app-admin-section {
+  margin-bottom: 28px;
+}
+
+.housing-app-admin-title {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.housing-app-admin-sub {
+  margin: 0 0 14px;
+}
+
+.housing-app-admin-scroll {
+  overflow-x: auto;
+}
+
+.housing-app-doc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.housing-app-doc-link {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #2D463E;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.housing-app-status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.housing-app-status-badge.status-pending {
+  background: #fef3c7 !important; /* Soft mustard */
+  color: #78350f !important;
+  border: 1px solid rgba(180, 83, 9, 0.2);
+}
+
+.housing-app-status-badge.status-approved {
+  background: #d1fae5 !important; /* Soft green */
+  color: #065f46 !important;
+  border: 1px solid rgba(4, 120, 87, 0.2);
+}
+
+.housing-app-status-badge.status-rejected {
+  background: #fee2e2 !important; /* Soft red */
+  color: #991b1b !important;
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.housing-app-file-input-error {
+  border-color: #ef4444 !important;
+  background: #fef2f2;
+}
+
+.housing-app-file-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #dc2626;
+  line-height: 1.4;
+}
+
+.housing-app-family-section {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.housing-app-family-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.housing-app-family-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.housing-app-family-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.housing-app-family-empty {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.housing-app-family-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+}
+
+.housing-app-family-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.housing-app-family-remove {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.housing-app-family-remove:hover {
+  color: #ef4444;
+}
+
+.housing-app-family-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.housing-app-family-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.housing-app-family-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.housing-app-family-info {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.admin-edit-modal {
+  max-width: 720px;
+}
+
+.admin-edit-form {
+  padding: 0 20px 20px;
+}
+
+.admin-edit-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.admin-edit-textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.admin-table-actions {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Закреплённая колонка «Действия» — всегда видна при горизонтальной прокрутке */
+.sticky-actions-th {
+  position: sticky;
+  right: 0;
+  z-index: 3;
+  background: #1e3a5f !important;
+  min-width: 140px;
+  box-shadow: -4px 0 10px rgba(15, 23, 42, 0.12);
+}
+
+.sticky-actions-td {
+  position: sticky;
+  right: 0;
+  z-index: 2;
+  background: #fff;
+  min-width: 140px;
+  box-shadow: -4px 0 10px rgba(15, 23, 42, 0.08);
+}
+
+.budget-excel-odd .sticky-actions-td {
+  background: #f8fafc;
+}
+
+.admin-edit-btn {
+  appearance: none;
+  border: 1px solid #2D463E;
+  background: #2D463E;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.admin-edit-btn:hover {
+  background: #3E5B51;
+  border-color: #3E5B51;
+  transform: scale(1.03);
+}
+

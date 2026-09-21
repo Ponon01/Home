@@ -1,0 +1,318 @@
+.record-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(4px);
+  z-index: 3000;
+  animation: record-drawer-fade-in 0.2s ease;
+}
+
+.record-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 100vw);
+  background: #fff;
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.18);
+  z-index: 3001;
+  display: flex;
+  flex-direction: column;
+  animation: record-drawer-slide-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes record-drawer-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes record-drawer-slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.record-drawer-head {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #eff5f2 100%);
+  flex-shrink: 0;
+}
+
+.record-drawer-head-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.record-drawer-title {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6d7e78;
+}
+
+.record-drawer-subtitle {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #2D463E;
+  line-height: 1.25;
+}
+
+.record-drawer-close {
+  border: none;
+  background: #fff;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.record-drawer-close:hover {
+  background: #f1f5f9;
+}
+
+.record-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 22px;
+}
+
+.record-drawer-block {
+  margin-bottom: 22px;
+}
+
+.record-drawer-block-title {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2D463E;
+}
+
+.record-drawer-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.record-drawer-field label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.record-drawer-input,
+.record-drawer-textarea,
+.record-drawer-select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.record-drawer-textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.record-drawer-input:focus,
+.record-drawer-textarea:focus,
+.record-drawer-select:focus {
+  outline: none;
+  border-color: #2D463E;
+  box-shadow: 0 0 0 3px rgba(45, 70, 62, 0.12);
+}
+
+.record-drawer-foot {
+  padding: 14px 22px 18px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.record-drawer-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.record-drawer-btn-ghost {
+  background: #fff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.record-drawer-btn-primary {
+  background: linear-gradient(180deg, #3E5B51 0%, #2D463E 100%);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(45, 70, 62, 0.25);
+}
+
+.record-drawer-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.table-address-link {
+  background: rgba(45, 70, 62, 0.05); /* Very pale sage */
+  border: 1px solid rgba(45, 70, 62, 0.1);
+  padding: 6px 12px;
+  margin: 2px 0;
+  text-align: left;
+  color: #2D463E; /* Forest-green text */
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.table-address-pin {
+  color: #2D463E;
+  flex-shrink: 0;
+}
+
+.table-address-link:hover {
+  background: rgba(45, 70, 62, 0.12); /* Slightly darker/more saturated on hover */
+  border-color: rgba(45, 70, 62, 0.25);
+  color: #2D463E;
+}
+
+.table-address-link:hover .table-address-text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.add-column-th {
+  width: 44px;
+  min-width: 44px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.add-column-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px dashed #94a3b8;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #2D463E;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.add-column-btn:hover {
+  background: rgba(45, 70, 62, 0.06);
+  border-color: #2D463E;
+}
+
+.add-column-popover {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  z-index: 100;
+  min-width: 240px;
+}
+
+.add-column-popover input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+}
+
+.add-column-popover-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.add-column-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* ——— Personal Info Plaques ——— */
+.personal-plaques-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.personal-plaque {
+  background: #fcfbfa; /* Pale warm cream background */
+  border: 1px solid rgba(45, 70, 62, 0.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(45, 70, 62, 0.02);
+}
+
+.personal-plaque:hover {
+  background: #faf7f2; /* Subtle warm tint on hover */
+  border-color: rgba(45, 70, 62, 0.18);
+  box-shadow: 0 4px 12px rgba(45, 70, 62, 0.04);
+}
+
+.personal-plaque-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8da298; /* Subtle grey-green label */
+}
+
+.personal-plaque-value {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #2D463E; /* High-contrast graphite forest-green */
+  line-height: 1.55; /* Letting text breathe */
+  word-break: break-word;
+}
+
+.personal-plaque-value .plaque-empty {
+  color: #94a3b8;
+  font-weight: 400;
+}

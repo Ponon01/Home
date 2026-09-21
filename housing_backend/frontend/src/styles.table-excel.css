@@ -1,0 +1,812 @@
+.table-page {
+  padding: 16px 20px;
+}
+
+.table-page-header {
+  margin-bottom: 10px;
+}
+
+.table-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  align-items: end;
+}
+
+.export-excel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(22, 163, 74, 0.25);
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.export-excel-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.35);
+}
+
+.export-excel-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.export-excel-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.export-excel-btn-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.table-toolbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.budget-excel-filters .export-excel-btn {
+  margin-left: auto;
+}
+
+.complex-summary-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.housing-app-admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.table-excel {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+  font-size: 12px;
+  table-layout: auto;
+  background: #fff;
+  --sticky-col-1-left: 0px;
+  --sticky-col-2-left: 320px;
+}
+
+/* social-housing overrides width and table-layout via its own rule below */
+
+.table-excel th,
+.table-excel td {
+  border-right: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 8px 10px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* td по умолчанию — nowrap, перенос только у явно помеченных классов */
+.table-excel td {
+  vertical-align: top;
+}
+
+.table-excel th {
+  background: #F2EFE9;
+  color: #4A5551;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table-excel thead tr:first-child th {
+  z-index: 3;
+}
+
+.table-excel tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+.table-excel tbody tr:hover td {
+  background-color: #FAF8F4 !important;
+}
+
+.table-excel .complex-wt-num {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-excel .complex-wt-left {
+  text-align: left;
+}
+
+/* Column sizing helpers */
+.table-excel .col-complex {
+  min-width: 180px;
+  width: 180px;
+}
+
+.table-excel .col-address {
+  min-width: 260px;
+  max-width: 360px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.table-excel .col-fio {
+  min-width: 180px;
+  max-width: 220px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.table-excel .col-family {
+  min-width: 220px;
+  max-width: 300px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.table-excel .col-doc {
+  min-width: 220px;
+  max-width: 320px;
+  width: 260px;
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+.table-excel .col-num-sm {
+  min-width: 90px;
+}
+
+.table-excel .col-position,
+.table-excel .col-department {
+  min-width: 220px;
+  max-width: 300px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.table-excel .col-basis {
+  min-width: 280px;
+  max-width: 400px;
+  width: 320px;
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+.table-excel .col-number,
+.table-excel .col-status {
+  min-width: 80px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-excel .col-wrap {
+  white-space: normal !important;
+}
+
+.table-excel .col-nowrap {
+  white-space: nowrap !important;
+}
+
+.table-excel .col-month-year {
+  min-width: 70px;
+}
+
+/* Sticky first columns on horizontal scroll */
+.table-excel .sticky-col-1 {
+  position: sticky;
+  left: var(--sticky-col-1-left);
+  z-index: 4;
+  background: #fff;
+}
+
+.table-excel .sticky-col-2 {
+  position: sticky;
+  left: var(--sticky-col-2-left);
+  z-index: 4;
+  background: #fff;
+}
+
+.table-excel thead .sticky-col-1,
+.table-excel thead .sticky-col-2 {
+  background: #F2EFE9;
+  color: #4A5551;
+  z-index: 6;
+}
+
+.table-excel tbody .sticky-col-1,
+.table-excel tbody .sticky-col-2 {
+  box-shadow: 1px 0 0 #d5d5d5;
+}
+
+.doc-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.doc-file-name {
+  font-size: 11px;
+  color: #4b5563;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.25;
+}
+
+.doc-input-hidden {
+  display: none;
+}
+
+.btn-small {
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #9ca3af;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: #f8fafc;
+  color: #2D463E;
+  border-color: #2D463E;
+}
+
+.btn-primary {
+  background: #2D463E;
+  border-color: #2D463E;
+  color: #fff;
+}
+
+/* Table-specific sticky offsets so header and body stay aligned */
+.table-social-housing {
+  --sticky-col-2-left: 260px; /* col-address width */
+  table-layout: fixed;
+  width: 3800px; /* sum of all colgroup widths */
+}
+
+/* All td in this table: overflow hidden, text wraps inside fixed-width cells */
+.table-social-housing td {
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  vertical-align: top;
+}
+
+/* Числовые ячейки — оставить nowrap */
+.table-social-housing td.col-nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-social-housing .sticky-col-1 {
+  left: 0;
+  width: 260px;
+}
+
+.table-social-housing .sticky-col-2 {
+  left: 260px;
+  width: 200px;
+}
+
+.table-social-housing thead th.sticky-col-1 {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 7;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-social-housing thead th.sticky-col-2 {
+  position: sticky;
+  left: 260px;
+  top: 0;
+  z-index: 7;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-budget-rent {
+  --sticky-col-1-left: 0px;
+  --sticky-col-2-left: 160px;
+}
+
+.budget-rent-root .budget-rent-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+.table-budget-rent th.budget-rent-th,
+.table-budget-rent td.budget-rent-td {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+  line-height: 1.35;
+  overflow: visible;
+  text-overflow: unset;
+  max-width: none;
+  min-width: 88px;
+}
+
+.table-budget-rent tbody tr {
+  height: auto;
+}
+
+.table-budget-rent .col-wide {
+  min-width: 140px;
+  max-width: 280px;
+}
+
+.table-budget-rent .col-jk {
+  min-width: 140px;
+  width: 140px;
+}
+
+.table-budget-rent .sticky-col-1 {
+  position: sticky;
+  left: var(--sticky-col-1-left);
+  z-index: 4;
+  background: inherit;
+  box-shadow: 1px 0 0 #e3e3e3;
+}
+
+.table-budget-rent .sticky-col-2 {
+  position: sticky;
+  left: var(--sticky-col-2-left);
+  z-index: 4;
+  background: inherit;
+  box-shadow: 1px 0 0 #e3e3e3;
+}
+
+.table-budget-rent thead th.sticky-col-1,
+.table-budget-rent thead th.sticky-col-2 {
+  z-index: 6;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-budget-rent tbody tr:nth-child(even) .sticky-col-1,
+.table-budget-rent tbody tr:nth-child(even) .sticky-col-2 {
+  background: #fcfcfc;
+}
+
+.table-budget-rent tbody tr:nth-child(odd) .sticky-col-1,
+.table-budget-rent tbody tr:nth-child(odd) .sticky-col-2 {
+  background: #fff;
+}
+
+.table-budget-purchase {
+  --sticky-col-1-left: 0px;
+  --sticky-col-2-left: 280px;
+}
+
+.budget-purchase-root .budget-purchase-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+.table-budget-purchase {
+  width: max-content;
+  min-width: 100%;
+}
+
+.table-budget-purchase thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-budget-purchase th.budget-purchase-th,
+.table-budget-purchase td.budget-purchase-td {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+  line-height: 1.35;
+  overflow: visible;
+  text-overflow: unset;
+  max-width: none;
+  min-width: 88px;
+}
+
+.table-budget-purchase tbody tr {
+  height: auto;
+}
+
+.table-budget-purchase .col-wide {
+  min-width: 140px;
+  max-width: 300px;
+}
+
+.table-budget-purchase .sticky-col-1 {
+  position: sticky;
+  left: var(--sticky-col-1-left);
+  z-index: 4;
+  background: inherit;
+  box-shadow: 1px 0 0 #e3e3e3;
+}
+
+.table-budget-purchase .sticky-col-2 {
+  position: sticky;
+  left: var(--sticky-col-2-left);
+  z-index: 4;
+  background: inherit;
+  box-shadow: 1px 0 0 #e3e3e3;
+}
+
+.table-budget-purchase thead th.sticky-col-1,
+.table-budget-purchase thead th.sticky-col-2 {
+  z-index: 6;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-budget-purchase tbody tr:nth-child(even) .sticky-col-1,
+.table-budget-purchase tbody tr:nth-child(even) .sticky-col-2 {
+  background: #fcfcfc;
+}
+
+.table-budget-purchase tbody tr:nth-child(odd) .sticky-col-1,
+.table-budget-purchase tbody tr:nth-child(odd) .sticky-col-2 {
+  background: #fff;
+}
+
+.table-budget-purchase .col-address.sticky-col-1 {
+  min-width: 300px;
+  width: 300px;
+  max-width: 300px;
+}
+
+/* /complex/:name — ComplexWorkingTable */
+.table-excel.table-complex-working th,
+.table-excel.table-complex-working td {
+  border: 1px solid #d9d9d9;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.table-excel.table-complex-working .col-address {
+  min-width: 260px;
+  max-width: 340px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+  vertical-align: top;
+}
+
+.table-excel.table-complex-working .col-family {
+  min-width: 220px;
+  max-width: 300px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+  vertical-align: top;
+}
+
+.table-excel.table-complex-working .col-department {
+  min-width: 260px;
+  max-width: 340px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+  vertical-align: top;
+}
+
+.table-excel.table-complex-working .col-position {
+  vertical-align: top;
+}
+
+.table-excel.table-complex-working .col-basis {
+  min-width: 220px;
+  max-width: 320px;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.35;
+  vertical-align: top;
+}
+
+.complex-wt-basis-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.complex-wt-protocol-line {
+  margin-top: 4px;
+  color: #4b5563;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+/* Sticky: Адрес + ФИО */
+.table-complex-working .sticky-col-1 {
+  left: 0;
+  min-width: 300px;
+  width: 300px;
+  max-width: 300px;
+}
+
+.table-complex-working .sticky-col-2 {
+  left: 300px;
+  min-width: 200px;
+  width: 200px;
+}
+
+.table-complex-working thead th.sticky-col-1 {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 7;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-complex-working thead th.sticky-col-2 {
+  position: sticky;
+  left: 300px;
+  top: 0;
+  z-index: 7;
+  background: #F2EFE9;
+  color: #4A5551;
+}
+
+.table-complex-working tbody .sticky-col-1,
+.table-complex-working tbody .sticky-col-2 {
+  box-shadow: 1px 0 0 #d5d5d5;
+}
+
+.table-excel.table-complex-working .complex-working-th-doc {
+  min-width: 150px;
+  max-width: 180px;
+  white-space: normal;
+  line-height: 1.25;
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.table-cell-wrap {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  display: block;
+  min-height: 1em;
+}
+
+/* ───── Budget Excel Table ───── */
+.budget-excel-root {
+  padding: 0;
+}
+
+.budget-excel-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+}
+
+.budget-excel-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.budget-excel-search {
+  flex: 1;
+  min-width: 260px;
+  max-width: 480px;
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+.budget-excel-search:focus {
+  border-color: #2D463E;
+  box-shadow: 0 0 0 3px rgba(45, 70, 62, 0.1);
+}
+
+.budget-excel-count {
+  font-size: 0.85rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.budget-excel-table {
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  width: max-content;
+  min-width: 100%;
+}
+
+.budget-excel-th {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 8px 10px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  border: 1px solid #2d4d73;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.budget-excel-td {
+  padding: 6px 10px;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.budget-excel-even { background: #fff; }
+.budget-excel-odd  { background: #f8fafc; }
+
+.budget-excel-empty {
+  text-align: center;
+  padding: 24px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ——— Table Status Badges ——— */
+.table-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.table-status-badge.status-pending {
+  background: #fef3c7; /* Pastel mustard yellow */
+  color: #78350f;
+  border: 1px solid rgba(180, 83, 9, 0.15);
+}
+
+.table-status-badge.status-approved {
+  background: #ecfdf5; /* Pastel green */
+  color: #065f46;
+  border: 1px solid rgba(4, 120, 87, 0.15);
+}
+
+.table-status-badge.status-rent {
+  background: #eff6ff; /* Pastel blue */
+  color: #1e40af;
+  border: 1px solid rgba(30, 64, 175, 0.15);
+}
+
+.table-status-badge.status-hostel {
+  background: #f5f3ff; /* Pastel purple */
+  color: #5b21b6;
+  border: 1px solid rgba(91, 33, 182, 0.15);
+}
+
+.table-status-badge.status-hotel {
+  background: #fdf2f8; /* Pastel pink */
+  color: #9d174d;
+  border: 1px solid rgba(157, 23, 77, 0.15);
+}
+
+/* ——— FIO Badge (мятно-зелёный бейдж для ФИО сотрудника) ——— */
+.table-fio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px 3px 8px;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.18);
+  border-radius: 20px;
+  color: #065f46;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.table-fio-badge:hover {
+  background: rgba(5, 150, 105, 0.14);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.12);
+}
+
+/* ——— Заголовок столбца с иконкой пин-метки ——— */
+.th-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.th-pin-icon {
+  color: #2D463E;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* ——— Budget Excel Table: улучшенный стиль заголовков ——— */
+.budget-excel-th {
+  background: #F2EFE9 !important;
+  color: #3a4f47 !important;
+  padding: 9px 10px !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(45, 70, 62, 0.15) !important;
+  border-bottom: 2px solid rgba(45, 70, 62, 0.2) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
